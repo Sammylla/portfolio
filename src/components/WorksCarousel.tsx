@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import type { Work } from "@/data/works";
+import { withBasePath } from "@/lib/basePath";
 
 export function WorksCarousel({ works }: { works: Work[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -31,10 +32,10 @@ export function WorksCarousel({ works }: { works: Work[] }) {
       <h2 className="absolute left-1/2 top-[14%] z-20 -translate-x-1/2 text-4xl font-bold uppercase md:top-[18%] md:text-5xl">Works</h2>
 
       <button className="absolute left-[2vw] top-[calc(27vh+26.667vw)] z-30 -translate-y-1/2 md:left-[7%] md:top-1/2" onClick={() => move(-1)} aria-label="前の作品">
-        <Image src="/top/Group 16.png" alt="" width={95} height={105} className="h-auto w-9 sm:w-11 md:w-[76px]" />
+        <Image src={withBasePath("/top/Group 16.png")} alt="" width={95} height={105} className="h-auto w-9 sm:w-11 md:w-[76px]" />
       </button>
       <button className="absolute right-[2vw] top-[calc(27vh+26.667vw)] z-30 -translate-y-1/2 md:right-[7%] md:top-1/2" onClick={() => move(1)} aria-label="次の作品">
-        <Image src="/top/Group 17.png" alt="" width={95} height={105} className="h-auto w-9 sm:w-11 md:w-[76px]" />
+        <Image src={withBasePath("/top/Group 17.png")} alt="" width={95} height={105} className="h-auto w-9 sm:w-11 md:w-[76px]" />
       </button>
 
       <div
@@ -50,7 +51,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
                   aria-hidden="true"
                 />
                 <div className="relative aspect-[3/2] overflow-hidden bg-mainbg">
-                  <Image className="object-cover transition-transform duration-500 group-hover:scale-[1.02]" src={work.image} alt={work.title} fill sizes="(max-width: 767px) 80vw, (max-width: 1023px) 56vw, 50vw" />
+                  <Image className="object-cover transition-transform duration-500 group-hover:scale-[1.02]" src={withBasePath(work.image)} alt={work.title} fill sizes="(max-width: 767px) 80vw, (max-width: 1023px) 56vw, 50vw" />
                   <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <span className="absolute bottom-3 right-4 translate-y-2 text-sm text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 md:bottom-4 md:right-5 md:text-lg">
                     see more &gt;

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getWorkBySlug, works } from "@/data/works";
 import { TerminalDescription } from "@/components/TerminalDescription";
 import { Header } from "@/components/Header";
+import { withBasePath } from "@/lib/basePath";
 
 export function generateStaticParams() {
   return works.map(({ slug }) => ({ slug }));
@@ -47,7 +48,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         <PerspectiveGrid />
 
         <Link href="/#works" className="absolute left-4 top-4 z-20 bg-white" aria-label="作品一覧へ戻る">
-          <Image src="/top/Frame7.png" alt="Back" width={173} height={53} className="h-auto w-[110px] md:w-[130px]" />
+          <Image src={withBasePath("/top/Frame7.png")} alt="Back" width={173} height={53} className="h-auto w-[110px] md:w-[130px]" />
         </Link>
 
         <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-5 pb-10 pt-20 md:px-10 md:pt-16">
@@ -56,7 +57,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           <div className="relative aspect-[3/2] w-[82vw] max-w-[760px] overflow-hidden md:w-[58vw]">
             <Image
               className="object-cover"
-              src={work.image}
+              src={withBasePath(work.image)}
               alt={`${work.title}のメインビジュアル`}
               fill
               priority
@@ -73,7 +74,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
               <div className="relative aspect-[4/3] w-[82vw] shrink-0 snap-center overflow-hidden sm:w-auto" key={`${image}-${index}`}>
                 <Image
                   className="object-cover"
-                  src={image}
+                  src={withBasePath(image)}
                   alt={`${work.title}の詳細画像 ${index + 1}`}
                   fill
                   sizes="(max-width: 639px) 90vw, 30vw"

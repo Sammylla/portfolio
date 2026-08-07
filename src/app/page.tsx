@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { ContactForm } from "@/components/ContactForm";
+import { withBasePath } from "@/lib/basePath";
 import { WorksCarousel } from "@/components/WorksCarousel";
 import { works } from "@/data/works";
 
@@ -11,7 +12,7 @@ export default function Home() {
 
       <section id="hero" className="relative aspect-[2330/1522] w-full">
         <Image
-          src="/top/hero.png"
+          src={withBasePath("/top/hero.png")}
           alt=""
           fill
           priority
@@ -26,7 +27,7 @@ export default function Home() {
         aria-labelledby="introduction-title"
       >
         <Image
-          src="/top/Group36.svg"
+          src={withBasePath("/top/Group36.svg")}
           alt="TECH LOVER"
           width={71}
           height={292}
@@ -37,7 +38,7 @@ export default function Home() {
           <div className="flex min-h-[100px] items-center justify-center">
             <div className="relative flex items-center justify-center">
               <Image
-                src="/top/Group1.png"
+                src={withBasePath("/top/Group1.png")}
                 alt=""
                 width={283}
                 height={66}
@@ -55,7 +56,7 @@ export default function Home() {
           <div className="mt-12 grid items-center gap-12 md:mt-16 md:grid-cols-[1fr_1.25fr]">
             <div className="flex justify-center">
               <Image
-                src="/top/Group32.png"
+                src={withBasePath("/top/Group32.png")}
                 alt="こっぺぱんのイラスト"
                 width={233}
                 height={233}
@@ -81,7 +82,7 @@ export default function Home() {
           Hello,world
         </p>
         <Image
-          src="/top/Group34.png"
+          src={withBasePath("/top/Group34.png")}
           alt="下へ"
           width={92}
           height={268}
@@ -91,7 +92,7 @@ export default function Home() {
 
       <section id="skills" className="relative flex h-screen min-h-[650px] items-center justify-center overflow-hidden font-mono" aria-labelledby="skills-title">
         <Image
-          src="/top/Group45.svg"
+          src={withBasePath("/top/Group45.svg")}
           alt=""
           fill
           className="geometric-drift pointer-events-none object-cover"
@@ -103,14 +104,14 @@ export default function Home() {
         </h2>
 
         <div className="relative z-10 flex w-full max-w-3xl items-center justify-center gap-8 px-10 md:gap-14">
-          <Image src="/top/cpp_logo.png" alt="C++" width={150} height={168} className="h-auto w-[18%] max-w-[150px] object-contain" />
-          <Image src="/top/ts-logo-512.png" alt="TypeScript" width={150} height={150} className="h-auto w-[18%] max-w-[150px] object-contain" />
-          <Image src="/top/logo512.png" alt="React" width={150} height={150} className="h-auto w-[18%] max-w-[150px] object-contain" />
-          <Image src="/top/GitHub_Invertocat_White.png" alt="GitHub" width={150} height={147} className="h-auto w-[18%] max-w-[150px] object-contain" />
+          <Image src={withBasePath("/top/cpp_logo.png")} alt="C++" width={150} height={168} className="h-auto w-[18%] max-w-[150px] object-contain" />
+          <Image src={withBasePath("/top/ts-logo-512.png")} alt="TypeScript" width={150} height={150} className="h-auto w-[18%] max-w-[150px] object-contain" />
+          <Image src={withBasePath("/top/logo512.png")} alt="React" width={150} height={150} className="h-auto w-[18%] max-w-[150px] object-contain" />
+          <Image src={withBasePath("/top/GitHub_Invertocat_White.png")} alt="GitHub" width={150} height={147} className="h-auto w-[18%] max-w-[150px] object-contain" />
         </div>
 
         <Image
-          src="/top/Group46.png"
+          src={withBasePath("/top/Group46.png")}
           alt="Technology Design"
           width={79}
           height={277}
