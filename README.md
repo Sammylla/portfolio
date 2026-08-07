@@ -1,4 +1,4 @@
-# Portfolio
+# koha_koppepan portfolio
 
 Next.jsとTailwind CSSで構築したポートフォリオサイトです。
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Oto Ito — Designer & Developer",
+  title: "koha_koppepan portfolio",
   description: "東京を拠点に活動するデザイナー／デベロッパーのポートフォリオ。",
 };
 

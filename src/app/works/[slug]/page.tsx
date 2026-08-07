@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const work = getWorkBySlug(slug);
-  return work ? { title: `${work.title} — @KOPPEPAN`, description: work.subtitle } : {};
+  return work ? { title: `${work.title} — koha_koppepan portfolio`, description: work.subtitle } : {};
 }
 
 function PerspectiveGrid() {
