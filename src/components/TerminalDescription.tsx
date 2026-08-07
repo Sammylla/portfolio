@@ -22,9 +22,10 @@ export function TerminalDescription({ title, period, description }: TerminalDesc
         starting shell...
       </p>
 
-      <div className={`transition-opacity duration-500 ${isReady ? "opacity-100" : "opacity-0"}`} aria-hidden={!isReady}>
-        <p><span className="text-[#2f60ff]">$</span> {title} / {period}</p>
-        <p className="mt-2 text-white/80">{description}</p>
+      <div className={`grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 transition-opacity duration-500 ${isReady ? "opacity-100" : "opacity-0"}`} aria-hidden={!isReady}>
+        <span>title:</span><p>{title.toLowerCase()}</p>
+        <span>date:</span><p>{period}</p>
+        <span>info:</span><p className="whitespace-pre-line text-white/90">{description}</p>
       </div>
     </div>
   );
