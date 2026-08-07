@@ -70,7 +70,7 @@ export default function Home() {
               </h3>
               <div className="mt-8 space-y-2 text-lg text-[#2f60ff] md:text-xl">
                 <p>KMC student/engineer</p>
-                <p>JQler(&apos;24-&apos;26)</p>
+                <p>JOler(&apos;24-&apos;26)</p>
                 <p>Writer</p>
                 <p className="pt-5">TypeScript/C/C++/</p>
               </div>
