@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mainbg: #151519;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-mainbg);
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes geometric-drift {
+  0%, 100% {
+    transform: translate3d(-3%, 2%, 0) scale(1.08) rotate(-1deg);
+  }
+  33% {
+    transform: translate3d(2%, -2%, 0) scale(1.03) rotate(0.7deg);
+  }
+  66% {
+    transform: translate3d(3%, 2%, 0) scale(1.1) rotate(-0.4deg);
+  }
+}
+
+.geometric-drift {
+  animation: geometric-drift 12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .geometric-drift {
+    animation: none;
+  }
+}
